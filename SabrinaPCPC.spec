@@ -11,7 +11,7 @@ a = Analysis(
     ['SabrinaPCPC.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('icon.png', '.')],
     hiddenimports=[
         'PIL',
         'PIL.Image',
