@@ -1,3 +1,6 @@
+
+<img width="907" height="723" alt="Principale" src="https://github.com/user-attachments/assets/49a375d4-089a-4194-bb7d-bab28c83a16e" />
+
 # SabrinaPCPC — Documentazione Tecnica
 
 ## Panoramica
@@ -88,6 +91,9 @@ SabrinaPCPC.py
 
 ---
 
+<img width="902" height="722" alt="Comprimere" src="https://github.com/user-attachments/assets/b4280600-2add-4489-b0a2-2fdf6fc4e661" />
+
+
 ## Funzione 1 — Compressione
 
 ### File supportati
@@ -101,6 +107,9 @@ SabrinaPCPC.py
 - Se il file compresso è più grande dell'originale: viene mantenuto l'originale
 
 ---
+
+<img width="898" height="718" alt="Confronto" src="https://github.com/user-attachments/assets/087a3641-5921-45c0-ac38-9f1d095e1dfb" />
+
 
 ## Funzione 2 — Confronto Cartelle
 
