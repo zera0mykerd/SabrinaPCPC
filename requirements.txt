@@ -1,0 +1,6 @@
+# Librerie per la gestione e compressione delle immagini
+Pillow
+
+# Librerie per la gestione e compressione dei video
+av
+opencv-python
