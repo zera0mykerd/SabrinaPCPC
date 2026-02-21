@@ -531,15 +531,25 @@ class AnalizzatoreCartelle:
 
     @staticmethod
     def verifica_integrita_immagine(percorso: Path) -> tuple[bool, str]:
-        """Verifica che un'immagine sia leggibile completamente."""
+        """Verifica che un'immagine sia leggibile completamente decodificando i dati."""
         if not PIL_AVAILABLE:
             return True, "Pillow non disponibile, verifica saltata"
+        
+        # Salviamo lo stato originale della flag
+        original_flag = ImageFile.LOAD_TRUNCATED_IMAGES
         try:
-            img = Image.open(percorso)
-            img.verify()
+            # Forza il fallimento se l'immagine è corrotta o troncata
+            ImageFile.LOAD_TRUNCATED_IMAGES = False 
+            
+            with Image.open(percorso) as img:
+                # img.verify()  <-- Questo non basta, controlla solo l'header, se però sei masochista bro, abilitalo!
+                img.load()    # <-- Forza la decodifica di ogni singolo pixel
             return True, "OK"
         except Exception as e:
-            return False, str(e)
+            return False, f"Immagine corrotta: {str(e)}"
+        finally:
+            # Ripristiniamo la flag per non rompere il resto del programma
+            ImageFile.LOAD_TRUNCATED_IMAGES = original_flag
 
     @staticmethod
     def verifica_integrita_video(percorso: Path) -> tuple[bool, str]:
